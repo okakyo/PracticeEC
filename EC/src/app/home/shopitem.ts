@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ShopItem {
     item:Item[]=[];
-    private Url='';
+    private Url='http://localhost:3000/server/shop';
     private headers =new Headers({'Content-Type':'application/json'});
 
     constructor(private http:Http){}

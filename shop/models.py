@@ -19,4 +19,17 @@ class ShopItems(models.Model):
     def __str__(self):
         return self.itemName
 
+class ItemThubnail(models.Model):
+    picID=models.IntegerField()
+    picName=models.CharField(max_length=50)
+    picFile=models.ImageField()
+    
+    def __str__(self):
+        return self.picName
 
+class Tag(models.Model):
+    tagID=models.IntegerField()
+    tagName=models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.tagName
