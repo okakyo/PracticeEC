@@ -15,6 +15,8 @@ class ShopItems(models.Model):
     itemValue=models.IntegerField()
     itemExplain=models.TextField(max_length=1000)
     itemDate=models.DateTimeField()
+    itemThubnailTag=models.ManyToOneField(ItemThubnail)
+    itemTag=models.ManyToManyField(ItemTag)
     
     def __str__(self):
         return self.itemName
@@ -27,7 +29,7 @@ class ItemThubnail(models.Model):
     def __str__(self):
         return self.picName
 
-class Tag(models.Model):
+class ItemTag(models.Model):
     tagID=models.IntegerField()
     tagName=models.CharField(max_length=50)
 
